@@ -1,0 +1,196 @@
+html, body {
+position: relative;
+height: 100%;
+}
+body {
+background: white;
+font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+font-size: 14px;
+color:#000;
+margin: 0;
+padding: 0;
+}
+.swiper-container {
+width: 80%;
+height: 400px;
+background-color: black;
+
+}
+.swiper-slide {
+font-size: 18px;
+color:#fff;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+padding: 40px 60px;
+}
+.parallax-bg {
+position: absolute;
+left: 0;
+top: 0;
+width: 130%;
+height: 100%;
+-webkit-background-size: cover;
+background-size: cover;
+background-position: center;
+}
+.swiper-slide .title {
+font-size: 41px;
+font-weight: 300;
+}
+.swiper-slide .subtitle {
+font-size: 21px;
+}
+.swiper-slide .text {
+font-size: 14px;
+max-width: 400px;
+line-height: 1.3;
+}
+
+.swiper-container .swiper-slide
+{
+    padding: 0px !important;
+}
+
+.swiper-slide .news-description
+{
+    
+    
+    height: 164px;
+    position: fixed;
+    bottom: 28px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    
+}
+
+.text p
+{
+    width: 634px;
+}
+
+
+.container
+{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.nav
+{
+    background-color:#3c3c3c;
+    width: 80%;
+    color: #f0f0f0;
+    margin: 0 auto;
+}
+ .web-logo
+ {
+    background-image: url('news.com_.au_.jpg');
+    background-position:center;
+    background-size: cover;
+    width: 235px;
+    height: 90px;
+ }
+
+.navbar-expand-lg, .world-news-div, .Business-news-div
+{
+    width: 80%;
+    margin:16px auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    /* background-color: #2196F3; */
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+  }
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    padding: 20px 0;
+    font-size: 30px;
+    width:280px;
+    height:300px;
+  }
+
+  .card-img-top
+  {
+      height:187px;
+  }
+
+  .card-title
+  {
+      font-weight: bold;
+  }
+
+.more-detail, .card-text
+{
+    font-size: 14px;
+}
+
+  section
+  {
+      margin: 0 auto;
+  }
+ 
+
+ @media screen and (max-width: 680px) {
+    .web-logo 
+    {
+        width: 200px;
+        height: 80px;
+    }
+    
+    .nav, .navbar-expand-lg 
+    {
+        width:100%;
+    }    
+}
+
+.card1, #card3
+{
+    height: 503px;
+}
+
+.nav-item .nav-link
+{
+    color: #f0f0f0;
+}
+
+@media screen and (max-width: 880px) 
+{
+    .grid-container 
+    {
+        grid-template-columns: auto;
+        justify-content: flex-start;
+    }
+    .card
+    {
+        display: flex;
+        flex-direction: row;
+        width: 42rem !important;
+        height: 222px;
+    }
+
+    .card-img-top
+    {
+        width:39% !important;
+        
+    }
+
+    .card-body
+    {
+        width: 426px !important;
+    }
+
+    
+}
