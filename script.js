@@ -69,5 +69,31 @@ window.onload = function () {
           }
 
     });
+
+    $.ajax({ 
+        url : "https://newsapi.org/v2/top-headlines?sources=ars-technica&apiKey=1ec0dd5242314496a1c4b271818a3838",
+        success: function(data)
+        {
+            document.querySelector('#Technology-img1').src = `${data.articles[0].urlToImage}`; 
+            document.querySelector("#Technology-title1").innerHTML= data.articles[0].title; 
+            document.querySelector("#Technology-text1").innerHTML= data.articles[0].description;
+            document.querySelector("#Technology-more-detail1").href= data.articles[0].url;
+            
+            document.querySelector('#Technology-img2').src = `${data.articles[1].urlToImage}`; 
+            document.querySelector("#Technology-title2").innerHTML= data.articles[1].title; 
+            document.querySelector("#Technology-text2").innerHTML= data.articles[1].description;
+            document.querySelector("#Technology-more-detail2").href= data.articles[1].url;
+
+            document.querySelector('#Technology-img3').src = `${data.articles[2].urlToImage}`; 
+            document.querySelector("#Technology-title3").innerHTML= data.articles[2].title; 
+            document.querySelector("#Technology-text3").innerHTML= data.articles[2].description;
+            document.querySelector("#Technology-more-detail3").href= data.articles[2].url;
+        },
+
+        error: function(error){
+            alert(error.responseJSON.message);
+          }
+
+    });
 }
 
