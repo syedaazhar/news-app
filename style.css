@@ -112,7 +112,7 @@ line-height: 1.3;
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 10px;
+    grid-gap: 16px;
     /* background-color: #2196F3; */
     padding: 10px;
     justify-content: center;
@@ -126,13 +126,23 @@ background-color: rgba(255, 255, 255, 0.8);
 text-align: left;
 padding: 20px 0;
 font-size: 30px;
-width:280px;
+width:100%;
 height:100%;
+border: 1px solid #cacaca;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+}
+
+.grid-container > div:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .card-img-top
 {
     height:187px;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
 }
 
 .card-title
@@ -161,6 +171,11 @@ height:100%;
     border: 0px;
 }
 
+.card-body
+{
+    width:100%;
+}
+
 
 @media screen and (max-width: 950px) 
 {
@@ -181,23 +196,25 @@ height:100%;
     .grid-container > div
     {
         width: 100% ;
-        font-size: 0;
+        font-size: 0; 
+        border-bottom: 1px solid #cacaca;
+      
     }
 
-    .card-img-top
+    /* .card div.card-img-top
     {
-        width:39% !important;
+        width:39%;
         
-    }
+    } */
 
     .card-body
     {
-        width: 426px !important;
+       padding-top: 0;
     }
 
     #card1
     {
-        height: 244px;
+        height:188px;
     }
 }
 
@@ -205,11 +222,13 @@ height:100%;
     .grid-container
     {
         width:100%;
+        
     }
 
     .grid-container > div
     {
         font-size: 0px;
+        border-bottom: 1px solid #cacaca;
     }
 
     .more-detail, .card-text
@@ -220,6 +239,10 @@ height:100%;
     .card-title
     {
         font-size: 15px;
+    }
+    .card-text
+    {
+        margin-bottom: 4px;
     }
 
     .swiper-container, .navbar-expand-lg, .nav
@@ -267,12 +290,10 @@ height:100%;
     }
 
     .card-body {
-        width: 257px !important;
+        padding-top: 16px;
     }
 
-    .card-img-top {
-        width: 100% !important;
-    }
+    
 
     .grid-container
     {
@@ -284,7 +305,9 @@ height:100%;
 
     .grid-container > div
     {
-        width: 266px;
+        width: 326px;
+        font-size: 0px;
+        border: 1px solid #cacaca;
     }
 
     .swiper-slide .news-description
@@ -305,10 +328,7 @@ height:100%;
         height:402px;
     }
 
-    .grid-container > div
-    {
-        font-size: 0px;
-    }
+    
 
     .more-detail, .card-text
     {

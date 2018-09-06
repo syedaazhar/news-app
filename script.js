@@ -54,11 +54,13 @@ $.ajax({
             let contain1El = document.querySelector("#contain1");
             contain1El.innerHTML += `<div>
             <div class="card" id="card1" style="width: 18rem;">
-                <img class="card-img-top" id="card-img-top1" src="${data.articles[i].urlToImage}" 
-                alt="Card image cap">
+                <div class="card-img-top" id="card-img-top1"  alt="Card image cap" 
+                style = background-image:url(${data.articles[i].urlToImage});>
+                </div>
+               
                 <div class="card-body">
-                    <h5 class="card-title" id="card-title1">${data.articles[i].title}</h5>
-                    <p class="card-text" id="card-text1">${data.articles[i].description}</p>
+                    <h5 class="card-title" id="card-title1">${data.articles[i].title.slice(0,60) + "...."}</h5>
+                    <p class="card-text" id="card-text1">${data.articles[i].description.slice(0,100) + "...."}</p>
                     <a href="${data.articles[i].url}" class="more-detail" id="more-detail1">More Details</a>
                 </div>
             </div>
@@ -80,14 +82,15 @@ $.ajax({
             let contain2El = document.querySelector("#contain2");
             contain2El.innerHTML += `<div>
                                         <div class="card" id="card1" style="width: 18rem;">
-                                            <img class="card-img-top" id="technology-img1" 
-                                            src="${data.articles[i].urlToImage}" alt="Card image cap">
+                                            <div class="card-img-top" id="technology-img1" alt="Card image cap"
+                                            style = background-image:url(${data.articles[i].urlToImage});>
+                                            </div>
                                             <div class="card-body">
                                                 <h5 class="card-title" id="technology-title1">
-                                                    ${data.articles[i].title}
+                                                    ${data.articles[i].title.slice(0,60) + "...."}
                                                 </h5>
                                                 <p class="card-text" id="technology-text1">
-                                                    ${data.articles[i].description}
+                                                    ${data.articles[i].description.slice(0,100) + "...."}
                                                 </p>
                                                 <a href="${data.articles[i].url}" class="more-detail"
                                                  id="technology-more-detail1">More Details</a>
@@ -111,14 +114,15 @@ $.ajax({
             let contain3El = document.querySelector("#contain3");
             contain3El.innerHTML += `<div>
                                         <div class="card" id="card1" style="width: 18rem;">
-                                            <img class="card-img-top" id="entertainment-img1" 
-                                            src="${data.articles[i].urlToImage}" alt="Card image cap">
+                                            <div class="card-img-top" id="entertainment-img1" alt="Card image cap"
+                                                style = background-image:url(${data.articles[i].urlToImage});>
+                                            </div>
                                             <div class="card-body">
                                                 <h5 class="card-title" id="entertainment-title1">
-                                                    ${data.articles[i].title}
+                                                    ${data.articles[i].title.slice(0,60) + "...."}
                                                 </h5>
                                                 <p class="card-text" id="entertainment-text1">
-                                                    ${data.articles[i].description}
+                                                    ${data.articles[i].description.slice(0,100) + "...."}
                                                 </p>
                                                 <a href="${data.articles[i].url}" class="more-detail"
                                                  id="entertainment-more-detail1">More Details</a>
@@ -142,14 +146,15 @@ $.ajax({
             let contain4El = document.querySelector("#contain4");
             contain4El.innerHTML += `<div>
                                         <div class="card" id="card1" style="width: 18rem;">
-                                            <img class="card-img-top" id="nature-img1" 
-                                            src="${data.articles[i].urlToImage}" alt="Card image cap">
+                                            <div class="card-img-top" id="nature-img1" alt="Card image cap"
+                                                style = background-image:url(${data.articles[i].urlToImage});>    
+                                            </div>
                                             <div class="card-body">
                                                 <h5 class="card-title" id="nature-title1">
-                                                    ${data.articles[i].title}
+                                                    ${data.articles[i].title.slice(0,60) + "...."}
                                                 </h5>
                                                 <p class="card-text" id="nature-text1">
-                                                    ${data.articles[i].description}
+                                                    ${data.articles[i].description.slice(0,100) + "...."}
                                                 </p>
                                                 <a href="${data.articles[i].url}" class="more-detail"
                                                  id="nature-more-detail1">More Details</a>
@@ -173,14 +178,15 @@ $.ajax({
             let contain5El = document.querySelector("#contain5");
             contain5El.innerHTML += `<div>
                                         <div class="card" id="card1" style="width: 18rem;">
-                                            <img class="card-img-top" id="sport-img1" 
-                                            src="${data.articles[i].urlToImage}" alt="Card image cap">
+                                            <div class="card-img-top" id="sport-img1" alt="Card image cap"
+                                                style = background-image:url(${data.articles[i].urlToImage});>
+                                            </div> 
                                             <div class="card-body">
                                                 <h5 class="card-title" id="sport-title1">
-                                                    ${data.articles[i].title}
+                                                    ${data.articles[i].title.slice(0,60) + "...." }
                                                 </h5>
                                                 <p class="card-text" id="sport-text1">
-                                                    ${data.articles[i].description}
+                                                    ${data.articles[i].description.slice(0,100) + "...." }
                                                 </p>
                                                 <a href="${data.articles[i].url}" class="more-detail"
                                                  id="sport-more-detail1">More Details</a>
