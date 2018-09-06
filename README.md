@@ -1,3 +1,2 @@
 # news-app
-
-https://syedaazhar.github.io/nwes-app/
+https://syedaazhar.github.io/news-app/
