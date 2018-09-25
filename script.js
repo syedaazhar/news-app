@@ -45,159 +45,196 @@ window.onload = function () {
 }
 
 
+let news = [
+    "Business news",
+    "Technology news",
+    "Entertainment news",
+    "Nature news",
+    "Sports news"
+]
 
-$.ajax({
-    url: "https://newsapi.org/v2/top-headlines?sources=australian-financial-review&apiKey=1ec0dd5242314496a1c4b271818a3838",
-    success: function (data) {
+function siteUrl(webUrl) {
 
-        for (let i = 0; i < 6; i++) {
-            let contain1El = document.querySelector("#contain1");
-            contain1El.innerHTML += `<div>
-            <div class="card" id="card1" style="width: 18rem;">
-                <div class="card-img-top" id="card-img-top1"  alt="Card image cap" 
-                style = background-image:url(${data.articles[i].urlToImage});>
-                </div>
-               
-                <div class="card-body">
-                    <h5 class="card-title" id="card-title1">${data.articles[i].title.slice(0,60) + "...."}</h5>
-                    <p class="card-text" id="card-text1">${data.articles[i].description.slice(0,100) + "...."}</p>
-                    <a href="${data.articles[i].url}" class="more-detail" id="more-detail1">More Details</a>
-                </div>
-            </div>
-        </div>`;
-        }
-    },
+    $.ajax({
+        url: webUrl,
+        success: function (data) {
 
-    error: function (error) {
-        alert(error.responseJSON.message);
-    }
+            for (let i = 0; i < 6; i++) {
+                let newUpdatesEl = document.querySelector(".news-updates");
+                newUpdatesEl.innerHTML += `
+                <div class="news-box">
+                    <div id="technology-news-div" class="main-news-div">
+                        <h2 id="technology">${news[i]}</h2>
+                    </div>            
+                    <div class="grid-container" id="contain2">            
+                        <div>
+                            <div class="card" id="card1" style="width: 18rem;">
+                                <div class="card-img-top" id="card-img-top1"  alt="Card image cap" 
+                                style = background-image:url(${data.articles[i].urlToImage});>
+                                </div>
+                            
+                                <div class="card-body">
+                                    <h5 class="card-title" id="card-title1">${data.articles[i].title.slice(0, 60) + "...."}</h5>
+                                    <p class="card-text" id="card-text1">${data.articles[i].description.slice(0, 100) + "...."}</p>
+                                    <a href="${data.articles[i].url}" class="more-detail" id="more-detail1">More Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            }
+        },
 
-});
-
-$.ajax({
-    url: "https://newsapi.org/v2/top-headlines?sources=ars-technica&apiKey=1ec0dd5242314496a1c4b271818a3838",
-    success: function (data) {
-
-        for (let i = 0; i < 6; i++) {
-            let contain2El = document.querySelector("#contain2");
-            contain2El.innerHTML += `<div>
-                                        <div class="card" id="card1" style="width: 18rem;">
-                                            <div class="card-img-top" id="technology-img1" alt="Card image cap"
-                                            style = background-image:url(${data.articles[i].urlToImage});>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title" id="technology-title1">
-                                                    ${data.articles[i].title.slice(0,60) + "...."}
-                                                </h5>
-                                                <p class="card-text" id="technology-text1">
-                                                    ${data.articles[i].description.slice(0,100) + "...."}
-                                                </p>
-                                                <a href="${data.articles[i].url}" class="more-detail"
-                                                 id="technology-more-detail1">More Details</a>
-                                            </div>
-                                        </div>
-                                    </div>`
-        }
-    },
-
-    error: function (error) {
-        alert(error.responseJSON.message);
-    }
-
-});
-
-$.ajax({
-    url: "https://newsapi.org/v2/top-headlines?sources=buzzfeed&apiKey=1ec0dd5242314496a1c4b271818a3838",
-    success: function (data) {
-
-        for (let i = 0; i < 6; i++) {
-            let contain3El = document.querySelector("#contain3");
-            contain3El.innerHTML += `<div>
-                                        <div class="card" id="card1" style="width: 18rem;">
-                                            <div class="card-img-top" id="entertainment-img1" alt="Card image cap"
-                                                style = background-image:url(${data.articles[i].urlToImage});>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title" id="entertainment-title1">
-                                                    ${data.articles[i].title.slice(0,60) + "...."}
-                                                </h5>
-                                                <p class="card-text" id="entertainment-text1">
-                                                    ${data.articles[i].description.slice(0,100) + "...."}
-                                                </p>
-                                                <a href="${data.articles[i].url}" class="more-detail"
-                                                 id="entertainment-more-detail1">More Details</a>
-                                            </div>
-                                        </div>
-                                    </div>`
+        error: function (error) {
+            alert(error.responseJSON.message);
         }
 
-    },
+    });
 
-    error: function (error) {
-        alert(error.responseJSON.message);
-    }
-});
 
-$.ajax({
-    url: "https://newsapi.org/v2/top-headlines?sources=national-geographic&apiKey=1ec0dd5242314496a1c4b271818a3838",
-    success: function (data) {
 
-        for (let i = 0; i < 6; i++) {
-            let contain4El = document.querySelector("#contain4");
-            contain4El.innerHTML += `<div>
-                                        <div class="card" id="card1" style="width: 18rem;">
-                                            <div class="card-img-top" id="nature-img1" alt="Card image cap"
-                                                style = background-image:url(${data.articles[i].urlToImage});>    
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title" id="nature-title1">
-                                                    ${data.articles[i].title.slice(0,60) + "...."}
-                                                </h5>
-                                                <p class="card-text" id="nature-text1">
-                                                    ${data.articles[i].description.slice(0,100) + "...."}
-                                                </p>
-                                                <a href="${data.articles[i].url}" class="more-detail"
-                                                 id="nature-more-detail1">More Details</a>
-                                            </div>
-                                        </div>
-                                    </div>`
-        }
+}
 
-    },
 
-    error: function (error) {
-        alert(error.responseJSON.message);
-    }
-});
 
-$.ajax({
-    url: "https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=1ec0dd5242314496a1c4b271818a3838",
-    success: function (data) {
+siteUrl("https://newsapi.org/v2/top-headlines?sources=australian-financial-review&apiKey=1ec0dd5242314496a1c4b271818a3838");
+siteUrl("https://newsapi.org/v2/top-headlines?sources=ars-technica&apiKey=1ec0dd5242314496a1c4b271818a3838");
+siteUrl("https://newsapi.org/v2/top-headlines?sources=buzzfeed&apiKey=1ec0dd5242314496a1c4b271818a3838");
+siteUrl("https://newsapi.org/v2/top-headlines?sources=national-geographic&apiKey=1ec0dd5242314496a1c4b271818a3838");
+siteUrl("https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=1ec0dd5242314496a1c4b271818a3838");
 
-        for (let i = 0; i < 6; i++) {
-            let contain5El = document.querySelector("#contain5");
-            contain5El.innerHTML += `<div>
-                                        <div class="card" id="card1" style="width: 18rem;">
-                                            <div class="card-img-top" id="sport-img1" alt="Card image cap"
-                                                style = background-image:url(${data.articles[i].urlToImage});>
-                                            </div> 
-                                            <div class="card-body">
-                                                <h5 class="card-title" id="sport-title1">
-                                                    ${data.articles[i].title.slice(0,60) + "...." }
-                                                </h5>
-                                                <p class="card-text" id="sport-text1">
-                                                    ${data.articles[i].description.slice(0,100) + "...." }
-                                                </p>
-                                                <a href="${data.articles[i].url}" class="more-detail"
-                                                 id="sport-more-detail1">More Details</a>
-                                            </div>
-                                        </div>
-                                    </div>`
-        }
 
-    },
 
-    error: function (error) {
-        alert(error.responseJSON.message);
-    }
-});
+
+
+
+
+
+// "https://newsapi.org/v2/top-headlines?sources=australian-financial-review&apiKey=1ec0dd5242314496a1c4b271818a3838"
+// $.ajax({
+//     url: "https://newsapi.org/v2/top-headlines?sources=ars-technica&apiKey=1ec0dd5242314496a1c4b271818a3838",
+//     success: function (data) {
+
+//         for (let i = 0; i < 6; i++) {
+//             let contain2El = document.querySelector("#contain2");
+//             contain2El.innerHTML += `<div>
+//                                         <div class="card" id="card1" style="width: 18rem;">
+//                                             <div class="card-img-top" id="technology-img1" alt="Card image cap"
+//                                             style = background-image:url(${data.articles[i].urlToImage});>
+//                                             </div>
+//                                             <div class="card-body">
+//                                                 <h5 class="card-title" id="technology-title1">
+//                                                     ${data.articles[i].title.slice(0,60) + "...."}
+//                                                 </h5>
+//                                                 <p class="card-text" id="technology-text1">
+//                                                     ${data.articles[i].description.slice(0,100) + "...."}
+//                                                 </p>
+//                                                 <a href="${data.articles[i].url}" class="more-detail"
+//                                                  id="technology-more-detail1">More Details</a>
+//                                             </div>
+//                                         </div>
+//                                     </div>`
+//         }
+//     },
+
+//     error: function (error) {
+//         alert(error.responseJSON.message);
+//     }
+
+// });
+
+// $.ajax({
+//     url: "https://newsapi.org/v2/top-headlines?sources=buzzfeed&apiKey=1ec0dd5242314496a1c4b271818a3838",
+//     success: function (data) {
+
+//         for (let i = 0; i < 6; i++) {
+//             let contain3El = document.querySelector("#contain3");
+//             contain3El.innerHTML += `<div>
+//                                         <div class="card" id="card1" style="width: 18rem;">
+//                                             <div class="card-img-top" id="entertainment-img1" alt="Card image cap"
+//                                                 style = background-image:url(${data.articles[i].urlToImage});>
+//                                             </div>
+//                                             <div class="card-body">
+//                                                 <h5 class="card-title" id="entertainment-title1">
+//                                                     ${data.articles[i].title.slice(0,60) + "...."}
+//                                                 </h5>
+//                                                 <p class="card-text" id="entertainment-text1">
+//                                                     ${data.articles[i].description.slice(0,100) + "...."}
+//                                                 </p>
+//                                                 <a href="${data.articles[i].url}" class="more-detail"
+//                                                  id="entertainment-more-detail1">More Details</a>
+//                                             </div>
+//                                         </div>
+//                                     </div>`
+//         }
+
+//     },
+
+//     error: function (error) {
+//         alert(error.responseJSON.message);
+//     }
+// });
+
+// $.ajax({
+//     url: "https://newsapi.org/v2/top-headlines?sources=national-geographic&apiKey=1ec0dd5242314496a1c4b271818a3838",
+//     success: function (data) {
+
+//         for (let i = 0; i < 6; i++) {
+//             let contain4El = document.querySelector("#contain4");
+//             contain4El.innerHTML += `<div>
+//                                         <div class="card" id="card1" style="width: 18rem;">
+//                                             <div class="card-img-top" id="nature-img1" alt="Card image cap"
+//                                                 style = background-image:url(${data.articles[i].urlToImage});>    
+//                                             </div>
+//                                             <div class="card-body">
+//                                                 <h5 class="card-title" id="nature-title1">
+//                                                     ${data.articles[i].title.slice(0,60) + "...."}
+//                                                 </h5>
+//                                                 <p class="card-text" id="nature-text1">
+//                                                     ${data.articles[i].description.slice(0,100) + "...."}
+//                                                 </p>
+//                                                 <a href="${data.articles[i].url}" class="more-detail"
+//                                                  id="nature-more-detail1">More Details</a>
+//                                             </div>
+//                                         </div>
+//                                     </div>`
+//         }
+
+//     },
+
+//     error: function (error) {
+//         alert(error.responseJSON.message);
+//     }
+// });
+
+// $.ajax({
+//     url: "https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=1ec0dd5242314496a1c4b271818a3838",
+//     success: function (data) {
+
+//         for (let i = 0; i < 6; i++) {
+//             let contain5El = document.querySelector("#contain5");
+//             contain5El.innerHTML += `<div>
+//                                         <div class="card" id="card1" style="width: 18rem;">
+//                                             <div class="card-img-top" id="sport-img1" alt="Card image cap"
+//                                                 style = background-image:url(${data.articles[i].urlToImage});>
+//                                             </div> 
+//                                             <div class="card-body">
+//                                                 <h5 class="card-title" id="sport-title1">
+//                                                     ${data.articles[i].title.slice(0,60) + "...." }
+//                                                 </h5>
+//                                                 <p class="card-text" id="sport-text1">
+//                                                     ${data.articles[i].description.slice(0,100) + "...." }
+//                                                 </p>
+//                                                 <a href="${data.articles[i].url}" class="more-detail"
+//                                                  id="sport-more-detail1">More Details</a>
+//                                             </div>
+//                                         </div>
+//                                     </div>`
+//         }
+
+//     },
+
+//     error: function (error) {
+//         alert(error.responseJSON.message);
+//     }
+// });
