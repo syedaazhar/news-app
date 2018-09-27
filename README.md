@@ -4,6 +4,10 @@
 
 This website shows the different catagories of News Headliens
 
+  **you can seen the websit here**
+
+https://syedaazhar.github.io/news-app/
+
 i have taken the news api through  **Jquery Ajax** .
 
 ### Ajax
@@ -54,4 +58,4 @@ AJAX just uses a combination of:
 
 
 
-https://syedaazhar.github.io/news-app/
+
