@@ -176,6 +176,18 @@ transition: 0.3s;
     width:100%;
 }
 
+footer{
+    background-color: #3c3c3c;
+    height: 40px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fab{
+    padding-right: 7px;
+}
 
 @media screen and (max-width: 950px) 
 {
