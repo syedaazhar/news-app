@@ -40,19 +40,10 @@ window.onload = function () {
     swiper.slideNext();
 }
 
-
-// let news = [
-//     "Business news",
-//     "Technology news",
-//     "Entertainment news",
-//     "Nature news",
-//     "Sports news"
-// ]
-
-function siteUrl(webUrl) {
+function siteUrl() {
 
     $.ajax({
-        url: webUrl,
+        url: "https://newsapi.org/v2/top-headlines?sources=australian-financial-review&apiKey=1ec0dd5242314496a1c4b271818a3838",
         success: function (data) {
 
             for (let i = 0; i < 6; i++) {
@@ -82,26 +73,7 @@ function siteUrl(webUrl) {
         }
 
     });
-
-
-
 }
-
-
-
-siteUrl("https://newsapi.org/v2/top-headlines?sources=australian-financial-review&apiKey=1ec0dd5242314496a1c4b271818a3838");
-siteUrl("https://newsapi.org/v2/top-headlines?sources=ars-technica&apiKey=1ec0dd5242314496a1c4b271818a3838");
-siteUrl("https://newsapi.org/v2/top-headlines?sources=buzzfeed&apiKey=1ec0dd5242314496a1c4b271818a3838");
-siteUrl("https://newsapi.org/v2/top-headlines?sources=national-geographic&apiKey=1ec0dd5242314496a1c4b271818a3838");
-siteUrl("https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=1ec0dd5242314496a1c4b271818a3838");
-
-
-
-
-
-
-
-
 
 $.ajax({
     url: "https://newsapi.org/v2/top-headlines?sources=ars-technica&apiKey=1ec0dd5242314496a1c4b271818a3838",
